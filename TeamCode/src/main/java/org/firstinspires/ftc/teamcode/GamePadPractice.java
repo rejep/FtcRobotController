@@ -18,7 +18,8 @@ public class GamePadPractice extends OpMode {
     public void loop() {
 
         double speedForward = -gamepad1.left_stick_y / 2.0;
-
+        double diffAxisX = gamepad1.right_stick_x - gamepad1.left_stick_x;
+        double sumTriggers = gamepad1.left_trigger + gamepad1.right_trigger;
 
         telemetry.addData("Left X", gamepad1.left_stick_x);
         telemetry.addData("Left Y", speedForward);
@@ -28,8 +29,8 @@ public class GamePadPractice extends OpMode {
         telemetry.addData("Right Y", gamepad1.right_stick_x);
         telemetry.addData("Button B", gamepad1.b);
 
-        telemetry.addData("Difference of Right and Left", gamepad1.right_stick_x - gamepad1.left_stick_x);
-        telemetry.addData("Sum of both triggers", gamepad1.left_trigger + gamepad1.right_trigger);
+        telemetry.addData("Difference of Right and Left", diffAxisX);
+        telemetry.addData("Sum of both triggers", sumTriggers);
 
     }
 }
