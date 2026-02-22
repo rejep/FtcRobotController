@@ -1,8 +1,10 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
+@Disabled
 @TeleOp
 public class IfPractice extends OpMode {
     @Override
@@ -12,16 +14,17 @@ public class IfPractice extends OpMode {
 
     @Override
     public void loop() {
-        double leftY = gamepad1.left_stick_y;
+        double motorSpeed = gamepad1.left_stick_y;
+        boolean leftBumper = gamepad1.left_bumper;
 
-        if (leftY < 0) {
-            telemetry.addData("Driving", "forward");
+//        telemetry.addData("Motor Speed:", motorSpeed );
+
+        if (leftBumper) {
+            telemetry.addData("Motor Speed:", motorSpeed);
         }
-        else if (leftY == 0) {
-            telemetry.addData("Not", "driving");
+        else{
+            telemetry.addData("Motor Speed:", motorSpeed * 0.5);
         }
-        else {
-            telemetry.addData("Driving", "backward");
-        }
+
     }
 }
