@@ -4,12 +4,12 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
-import org.firstinspires.ftc.teamcode.mechanisms.TestBench;
+import org.firstinspires.ftc.teamcode.mechanisms.testBench;
 
 @Disabled
 @TeleOp
 public class TouchSensorPractice extends OpMode {
-    TestBench bench = new TestBench();
+    testBench bench = new testBench();
     String isPressed = "";
 
     @Override

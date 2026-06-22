@@ -5,10 +5,10 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.DigitalChannel;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-public class TestBench {
+public class testBench {
     private DigitalChannel touchSensor;
     private DcMotor motor;
-    private double ticksPerRev;
+    public double ticksPerRev;
 
 //    -------- Initialization of Hardware components --------
     public void init(HardwareMap hwMap) {
@@ -43,6 +43,12 @@ public class TestBench {
         return motor.getCurrentPosition() / ticksPerRev;  // normalizing ticks to revolutions
     }
 
+//    public void changeMotorMode(DcMotor.ZeroPowerBehavior behaviour) {
+//        motor.setZeroPowerBehavior(behaviour);
+//    }
+//
+
+//    My solution
     public void changeMotorModeBreak() {
         motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     }
